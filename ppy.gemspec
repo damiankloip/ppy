@@ -10,4 +10,6 @@ Gem::Specification.new do |s|
   s.files = ['lib/ppy.rb']
   s.homepage = 'http://rubygems.org/gems/ppy'
   s.executables << 'ppy'
+
+  s.add_runtime_dependency 'rainbow', '~> 1.1.4'
 end
