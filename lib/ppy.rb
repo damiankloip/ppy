@@ -12,7 +12,7 @@ module PrettyYaml
           string = "#{indent_string(level)}#{format_key(key)}:"
 
           if value.empty?
-            puts string + ' ' + format_value('{ }')
+            puts string + ' ' + empty_value(value)
           else
             puts string
             print(value, level + 1)
@@ -26,7 +26,7 @@ module PrettyYaml
         if value.is_a? Enumerable
           string = format_key "#{indent_string(level)}-"
           if value.empty?
-            puts string + ' ' + format_value('[ ]')
+            puts string + ' ' + empty_value(value)
           else
             puts string
             print_yaml(value, level + 1)
@@ -40,17 +40,29 @@ module PrettyYaml
     end
   end
 
-  # creates space indentation for a string, based on a level int.
-  def indent_string(level)
+  # Creates space indentation for a string, based on a level int.
+  def indent_string(level = 0)
     "  " * level
   end
 
-  # Formats the data key.
+  # Formats an empty_value.
+  def empty_value(value)
+    case value
+    when Array
+      format_value('[ ]')
+    when Hash
+      format_value('{ }')
+    else
+      value
+    end
+  end
+
+  # Formats a data key.
   def format_key(key)
     key.to_s.color(:yellow)
   end
 
-  # Formats the data value.
+  # Formats a data value.
   def format_value(value)
     case value
     when Numeric
