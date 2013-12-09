@@ -1,7 +1,6 @@
 require 'rainbow'
 
 module PrettyYaml
-
   extend self
 
   # Prints the actual data.
@@ -36,6 +35,8 @@ module PrettyYaml
           puts "#{indent_string(level)}#{format_key('-')} #{format_value(value)}"
         end
       end
+    else
+      puts "#{indent_string(level)}#{format_value(data)}"
     end
   end
 
@@ -61,7 +62,7 @@ module PrettyYaml
     when FalseClass
       value.to_s.color(:red)
     when NilClass
-      value.to_s.color(:blue)
+      'nil'.color(:blue)
     else
       value
     end

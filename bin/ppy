@@ -3,6 +3,7 @@
 require 'yaml'
 require 'ppy'
 
+# This first argument should always be the file to parse.
 file = ARGV.first
 
 abort 'No file argument provided.' if file.nil?
@@ -10,4 +11,14 @@ abort 'File does not exist.' unless File.exists?(file)
 abort 'Directory provided, provide a file path instead.' if File.directory?(file)
 
 yaml = YAML.load_file(file)
+
+# If the vine gem is installed, only output a nested value if one has been
+# provided as the second argument.
+if Gem::Specification.find_by_name('vine')
+  unless ARGV[1].nil?
+    require 'vine'
+    yaml = yaml.vine(ARGV[1])
+  end
+end
+
 PrettyYaml.print(yaml)
