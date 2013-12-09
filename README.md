@@ -2,9 +2,6 @@
 
 Provides a CLI executable to pretty print YAML files in colour.
 
-Optionally, install the [vine](https://github.com/guangnan/vine) gem to also
-filter the YAML attributes before printing.
-
 ### Install
 
     gem install ppy
@@ -13,5 +10,7 @@ filter the YAML attributes before printing.
 
     ppy path/to/file.yml
 
-    ppy path/to/file.yml data.attribute
+    ppy path/to/file.yml some_key
+
+    ppy path/to/file.yml some_key.some_nested_key
 
