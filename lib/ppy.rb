@@ -1,4 +1,5 @@
 require 'rainbow'
+require 'ppy/nested_access'
 
 module PrettyYaml
   extend self

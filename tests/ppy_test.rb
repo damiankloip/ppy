@@ -7,7 +7,7 @@ begin
 rescue LoadError
 end
 
-module Notify
+module PrettyYaml
   class PPYTest < Minitest::Test
 
     # Tests the indent_string method.

@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.description = 'A helper tool to pretty print YAML data.'
   s.authors = ['Damian Lee']
   s.email = 'damiankloip@gmail.com'
-  s.files = ['lib/ppy.rb']
+  s.files = ['lib/ppy.rb', 'lib/ppy/nested_access.rb']
   s.homepage = 'https://github.com/damiankloip/ppy'
   s.executables << 'ppy'
 
