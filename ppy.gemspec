@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.authors = ['Damian Lee']
   s.email = 'damiankloip@gmail.com'
   s.files = ['lib/ppy.rb']
-  s.homepage = 'http://rubygems.org/gems/ppy'
+  s.homepage = 'https://github.com/damiankloip/ppy'
   s.executables << 'ppy'
 
   s.add_runtime_dependency 'rainbow', '~> 1.1.4'
