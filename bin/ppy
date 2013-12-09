@@ -1,0 +1,13 @@
+#! /usr/bin/env ruby
+
+require 'yaml'
+require 'ppy'
+
+file = ARGV.first
+
+abort 'No file argument provided.' if file.nil?
+abort 'File does not exist.' unless File.exists?(file)
+abort 'Directory provided, provide a file path instead.' if File.directory?(file)
+
+yaml = YAML.load_file(file)
+PrettyYaml.print(yaml)
