@@ -14,11 +14,9 @@ yaml = YAML.load_file(file)
 
 # If the vine gem is installed, only output a nested value if one has been
 # provided as the second argument.
-if Gem::Specification.find_by_name('vine')
-  unless ARGV[1].nil?
-    require 'vine'
-    yaml = yaml.vine(ARGV[1])
-  end
+unless ARGV[1].nil? or Gem::Specification.find_all_by_name('vine').empty?
+  require 'vine'
+  yaml = yaml.vine(ARGV[1])
 end
 
 PrettyYaml.print(yaml)
