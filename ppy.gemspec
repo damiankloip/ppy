@@ -2,7 +2,6 @@
 Gem::Specification.new do |s|
   s.name = 'ppy'
   s.version = '0.0.5'
-  s.date = '2013-12-09'
   s.summary = 'Pretty Print YAML'
   s.description = 'A helper tool to pretty print YAML data.'
   s.authors = ['Damian Lee']
