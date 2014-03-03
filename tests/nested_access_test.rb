@@ -24,6 +24,9 @@ module PrettyYaml
           'one' => {
             'two' => 'test',
           }
+        },
+        'nested.dot' => {
+          'one' => 'test'
         }
       }
 
@@ -40,6 +43,12 @@ module PrettyYaml
       assert_equal({'two' => 'test'}, test_hash.nested_access('nested_hash_deep.one'))
       assert_equal('test', test_hash.nested_access('nested_hash_deep.one.two'))
       assert_nil(test_hash.nested_access('nested_hash_deep.one.three'))
+
+      # Assert the seperator option works.
+      assert_nil(test_hash.nested_access('nested.dot'))
+      assert_equal({'one' => 'test'}, test_hash.nested_access('nested.dot', '/'))
+      assert_equal('test', test_hash.nested_access('nested.dot/one', '/'))
+      assert_nil(test_hash.nested_access('nested.dot/two', '/'))
     end
 
   end
