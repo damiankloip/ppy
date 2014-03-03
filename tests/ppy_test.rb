@@ -1,12 +1,6 @@
-require 'minitest/autorun'
-require 'minitest/unit'
-require 'rainbow'
-require_relative '../lib/ppy'
-
-begin
-  require 'minitest/pride'
-rescue LoadError
-end
+require_relative 'test_helper'
+require 'rainbow/ext/string'
+require 'ppy'
 
 module PrettyYaml
   class PPYTest < Minitest::Test

@@ -1,6 +1,5 @@
-require 'minitest/autorun'
-require 'minitest/unit'
-require_relative '../lib/ppy/nested_access'
+require_relative 'test_helper'
+require 'ppy/nested_access'
 
 begin
   require 'minitest/pride'
