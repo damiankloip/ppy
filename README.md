@@ -14,3 +14,6 @@ Provides a CLI executable to pretty print YAML files in colour.
 
     ppy path/to/file.yml some_key.some_nested_key
 
+    # Seperator can be specified using -s, --seperator, or PPY_SEPERATOR env var.
+    ppy path/to/file.yml some.dot.key/nested.key --seperator=/
+
