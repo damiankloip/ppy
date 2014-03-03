@@ -1,8 +1,9 @@
 require 'rainbow'
-require 'ppy/nested_access'
 
 module PrettyYaml
   extend self
+
+  INDENT = '  '
 
   # Prints the actual data.
   def print(data, level = 0)
@@ -30,7 +31,7 @@ module PrettyYaml
             puts string + ' ' + empty_value(value)
           else
             puts string
-            print_yaml(value, level + 1)
+            print(value, level + 1)
           end
         else
           puts "#{indent_string(level)}#{format_key('-')} #{format_value(value)}"
@@ -43,7 +44,7 @@ module PrettyYaml
 
   # Creates space indentation for a string, based on a level int.
   def indent_string(level = 0)
-    "  " * level
+    INDENT * level
   end
 
   # Formats an empty_value.

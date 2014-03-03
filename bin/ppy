@@ -12,10 +12,19 @@ abort 'Directory provided, provide a file path instead.' if File.directory?(file
 
 yaml = YAML.load_file(file)
 
-# If the vine gem is installed, only output a nested value if one has been
-# provided as the second argument.
+# Only output a nested value if one has been provided as the second argument.
 unless ARGV[1].nil?
-  yaml = yaml.nested_access(ARGV[1])
+  require 'ppy/nested_access'
+  require 'optparse'
+
+  seperator = ENV['PPY_SEPERATOR'] || '.'
+
+  OptionParser.new do |opt|
+    opt.on('-s SEPERATOR', '--seperator SEPERATOR') { |s| seperator = s }
+    opt.parse!
+  end
+
+  yaml = yaml.nested_access(ARGV[1], seperator)
 end
 
 PrettyYaml.print(yaml)

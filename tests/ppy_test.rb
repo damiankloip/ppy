@@ -1,5 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/unit'
+require 'rainbow'
 require_relative '../lib/ppy'
 
 begin

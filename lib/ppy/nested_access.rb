@@ -1,9 +1,9 @@
 
 class Hash
 
-  def nested_access(path)
+  def nested_access(path, seperator = '.')
     ret = self
-    path.to_s.split('.').each do |p|
+    path.to_s.split(seperator).each do |p|
       if p.to_i.to_s == p
         ret = ret[p.to_i]
       elsif !ret[p.to_s].nil?
