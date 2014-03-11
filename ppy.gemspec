@@ -1,7 +1,7 @@
 
 Gem::Specification.new do |s|
   s.name = 'ppy'
-  s.version = '0.0.5'
+  s.version = '0.0.6'
   s.summary = 'Pretty Print YAML'
   s.description = 'A helper tool to pretty print YAML data.'
   s.authors = ['Damian Lee']
@@ -10,5 +10,5 @@ Gem::Specification.new do |s|
   s.homepage = 'https://github.com/damiankloip/ppy'
   s.executables << 'ppy'
 
-  s.add_runtime_dependency 'rainbow', '~> 1.1.4'
+  s.add_runtime_dependency 'rainbow', '~> 2.0.0'
 end

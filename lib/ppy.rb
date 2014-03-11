@@ -1,4 +1,4 @@
-require 'rainbow'
+require 'rainbow/ext/string'
 
 module PrettyYaml
   extend self
