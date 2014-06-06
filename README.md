@@ -1,5 +1,7 @@
 # Pretty Print YAML
 
+[![Build Status](https://travis-ci.org/damiankloip/ppy.svg?branch=master)](https://travis-ci.org/damiankloip/ppy)
+
 Provides a CLI executable to pretty print YAML files in colour.
 
 ### Install
